@@ -1,0 +1,50 @@
+/* Mobile specific styles */
+
+.App {
+  padding: 10px;
+}
+
+section {
+  padding: 10px 5px;
+}
+
+/* Example responsive adjustments for components */
+/* VisionMission */
+#more {
+  padding: 10px 5px !important;
+}
+
+/* Grades */
+#grades {
+  padding: 10px 5px !important;
+}
+
+/* PhotoCarousel */
+#photos {
+  padding: 10px 5px !important;
+}
+
+/* Services */
+#services {
+  padding: 10px 5px !important;
+}
+
+/* Teachers */
+#teachers {
+  padding: 10px 5px !important;
+}
+
+/* Testimonials */
+#testimonials {
+  padding: 10px 5px !important;
+}
+
+/* Schedule */
+#schedule {
+  padding: 10px 5px !important;
+}
+
+/* Map */
+#location {
+  padding: 10px 5px !important;
+}

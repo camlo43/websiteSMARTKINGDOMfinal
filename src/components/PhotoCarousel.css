@@ -1,0 +1,82 @@
+.photoCarouselSection {
+    background-color: #e6f0ff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .photoCarouselTitle {
+    color: #004080;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .carousel {
+    position: relative;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carouselImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+  }
+  
+  .carouselImage.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .dots {
+    margin-top: 15px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #bbb;
+  }
+  
+  .dot.activeDot {
+    background-color: #0073e6;
+  }
+  
+  /* Responsive styles for mobile */
+  @media (max-width: 600px) {
+    .photoCarouselSection {
+      padding: 20px 10px;
+    }
+  
+    .photoCarouselTitle {
+      font-size: 1.5rem;
+    }
+  
+    .carousel {
+      height: 250px;
+    }
+  
+    .carouselImage {
+      height: 250px;
+    }
+  
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+    }
+  }
+  
