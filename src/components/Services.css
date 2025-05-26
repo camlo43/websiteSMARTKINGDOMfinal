@@ -1,11 +1,11 @@
 .servicesSection {
-  background-color: #ffffff;
+  background-color: #F0F4FF; /* Azul claro */
   padding: 50px 20px;
   text-align: center;
 }
 
 .servicesTitle {
-  color: #003366;
+  color: #1E3A8A; /* Azul oscuro */
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 700;
@@ -46,7 +46,7 @@
 
 .serviceDescription {
   font-size: 1.2rem;
-  color: #004080;
+  color: #1E3A8A; /* Azul oscuro */
   flex: 1;
 }
 

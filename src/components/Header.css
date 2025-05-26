@@ -1,44 +1,94 @@
+/* Improved Navbar Styles with Static Position */
+
 .header {
-  background-color: #cce0ff; /* light blue */
-  padding: 15px 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #4DA6FF 0%, #CBA4FF 100%); /* Azul cielo vibrante to Lila pastel */
+  padding: 20px 60px;
+  box-shadow: 0 6px 20px rgba(203, 164, 255, 0.4); /* Lila pastel shadow */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  position: static; /* changed from sticky to static */
+  top: auto;
+  z-index: auto;
 }
 
 .titleContainer {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .logo {
-  height: 125px;
-  width: 125px;
+  height: 110px;
+  width: 110px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover,
+.logo:focus {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.6);
+  outline: none;
 }
 
 .title {
   margin: 0;
-  color: #004080; /* darker blue */
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.2rem;
+  color: #FFFFFF; /* Blanco nieve */
+  font-size: 2.6rem;
+  font-weight: 800;
+  user-select: none;
+  cursor: default;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  white-space: nowrap;
 }
 
 .nav {
   display: flex;
-  gap: 25px;
+  gap: 32px;
+  align-items: center;
 }
 
 .navLink {
-  color: #0073e6;
+  color: #ffffff; /* Lila pastel */
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 12px 18px;
+  border-radius: 14px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF; /* Blanco nieve */
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.loginLink {
+  margin-left: auto;
+  color: #FFFFFF; /* Blanco nieve */
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 12px 40px;
+  border-radius: 50px; /* Pill shape */
+  background: #003F91; /* Azul oscuro amigable */
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 63, 145, 0.8);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Removed flower decorations */
 }
 
 /* Responsive styles for mobile */
@@ -46,7 +96,7 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 20px;
+    padding: 15px 30px;
   }
 
   .titleContainer {
@@ -54,20 +104,20 @@
   }
 
   .logo {
-    height: 70px;
-    width: 70px;
+    height: 75px;
+    width: 75px;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .nav {
     flex-direction: column;
     width: 100%;
     display: none;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 20px;
+    margin-top: 18px;
   }
 
   .nav.navOpen {
@@ -75,20 +125,37 @@
   }
 
   .navLink {
-    font-size: 1rem;
-    padding: 10px 15px;
+    font-size: 1.2rem;
+    padding: 14px 20px;
     width: 100%;
     border-radius: 0;
+  }
+
+  .loginLink {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #003F91; /* Azul oscuro amigable */
+    color: #FFFFFF; /* Blanco nieve */
+  }
+
+  .loginLink:hover,
+  .loginLink:focus {
+    background-color: #002B6B; /* Darker shade */
+    box-shadow: none;
   }
 
   .menuToggle {
     background: none;
     border: none;
-    color: #0073e6;
+    color: #CBA4FF; /* Lila pastel */
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     align-self: flex-end;
-    margin-top: 10px;
+    margin-top: 14px;
     display: block;
   }
 }

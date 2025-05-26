@@ -5,8 +5,8 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #ffffff;
-  color: #004080;
+  background-color: #FFFFFF; /* Blanco nieve */
+  color: #1E3A8A; /* Azul oscuro */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -18,7 +18,7 @@ body, html, #root {
 
 /* Links */
 a {
-  color: #0073e6;
+  color: #2563EB; /* Azul principal */
   text-decoration: none;
 }
 

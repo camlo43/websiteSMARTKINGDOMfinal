@@ -1,0 +1,111 @@
+.loginBackground {
+  background-image: url('../backgroundlogin.jpg.avif');
+  background-color: #4DA6FF; /* Azul cielo vibrante fallback */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.loginPanel {
+  background: rgba(255, 255, 255, 0.8); /* Blanco nieve with opacity */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 63, 145, 0.2); /* Azul oscuro amigable shadow */
+  padding: 40px 50px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.loginLogo {
+  width: 120px;
+  margin: 0 auto 30px auto; /* center horizontally */
+  display: block;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #4DA6FF; /* Azul cielo vibrante */
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: white;
+}
+
+.inputIcon {
+  color: #003F91; /* Azul oscuro amigable */
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  color: #003F91; /* Azul oscuro amigable */
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 36px; /* increased left padding to avoid icon overlap */
+}
+
+.loginButton {
+  background-color: #003F91; /* Azul oscuro amigable */
+  color: #FFFFFF; /* Blanco nieve */
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover,
+.loginButton:focus {
+  background-color: #4DA6FF; /* Azul cielo vibrante */
+  outline: none;
+}
+
+.forgotPassword {
+  margin-top: 10px;
+}
+
+.forgotPassword a {
+  color: #4DA6FF; /* Azul cielo vibrante */
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.forgotPassword a:hover,
+.forgotPassword a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .loginPanel {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .loginLogo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+}

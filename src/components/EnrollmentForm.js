@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaUser, FaEnvelope } from 'react-icons/fa';
 import './EnrollmentForm.css';
 import emailjs from 'emailjs-com';
 
@@ -68,28 +69,34 @@ const EnrollmentForm = () => {
       <form onSubmit={handleSubmit} noValidate>
         <div className="formGroup">
           <label htmlFor="name">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            aria-describedby="nameError"
-            required
-          />
+          <div className="inputWrapper">
+            <FaUser className="inputIcon" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              aria-describedby="nameError"
+              required
+            />
+          </div>
           {errors.name && <span id="nameError" className="error">{errors.name}</span>}
         </div>
         <div className="formGroup">
           <label htmlFor="email">Correo electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            aria-describedby="emailError"
-            required
-          />
+          <div className="inputWrapper">
+            <FaEnvelope className="inputIcon" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              aria-describedby="emailError"
+              required
+            />
+          </div>
           {errors.email && <span id="emailError" className="error">{errors.email}</span>}
         </div>
         <button type="submit" className="submitButton">Enviar</button>

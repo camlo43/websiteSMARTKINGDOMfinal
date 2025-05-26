@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Map from './components/Map';
@@ -12,6 +12,7 @@ import Testimonials from './components/Testimonials';
 import EnrollmentForm from './components/EnrollmentForm';
 import './components/EnrollmentForm.css';
 import Schedule from './components/Schedule';
+import Login from './components/Login';
 
 function Home() {
   return (
@@ -31,16 +32,16 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Future routes can be added here */}
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
