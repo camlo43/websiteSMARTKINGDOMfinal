@@ -20,6 +20,15 @@ const studentController = {
     } catch (error) {
       res.status(500).json({ message: 'Server error', error });
     }
+  },
+
+  getStudentsWithClassroom: async (req, res) => {
+    try {
+      const studentsWithClassroom = await Student.findAllWithClassroom();
+      res.json(studentsWithClassroom);
+    } catch (error) {
+      res.status(500).json({ message: 'Server error', error });
+    }
   }
 };
 

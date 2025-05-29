@@ -1,0 +1,150 @@
+.docentePanel {
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f7f1;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.teacherCard {
+  display: flex;
+  align-items: center;
+  background-color: #a2d5f2;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 63, 145, 0.3);
+}
+
+.teacherPhoto {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 63, 145, 0.5);
+  margin-right: 25px;
+}
+
+.welcomeMessage {
+  color: #003F91;
+  font-weight: 700;
+}
+
+.welcomeMessage p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.studentsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.studentsTable th, .studentsTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.studentsTable th {
+  background-color: #a2d5f2;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+.addNoteButton {
+  background-color: #f7a072;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.addNoteButton:hover {
+  background-color: #e07b58;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff8f0;
+  padding: 25px;
+  border-radius: 15px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #f76c6c;
+}
+
+.noteForm label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.noteForm input[type="text"],
+.noteForm input[type="number"],
+.noteForm input[type="date"],
+.noteForm select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.submitNoteButton {
+  background-color: #6ab04c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.submitNoteButton:hover {
+  background-color: #4a7c2b;
+}

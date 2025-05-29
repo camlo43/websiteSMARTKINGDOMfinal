@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../SmartKingdomfinal.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      setUser(null);
+    }
+  }, [location]);
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -18,6 +29,13 @@ const Header = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    navigate('/login');
+    setMenuOpen(false);
   };
 
   const sections = ['grades', 'teachers', 'services', 'photos', 'inscripcion', 'location'];
@@ -36,7 +54,6 @@ const Header = () => {
         <Link to="/" className="logoLink" aria-label="Go to Home">
           <img src={logo} alt="Smart Kingdom Logo" className="logo" />
         </Link>
-        
       </div>
       <nav className={`nav ${menuOpen ? 'navOpen' : ''}`}>
         {sections.map((sectionId) => {
@@ -72,9 +89,15 @@ const Header = () => {
             );
           }
         })}
-        <Link to="/login" className="navLink loginLink" aria-label="Login" onClick={() => setMenuOpen(false)}>
-          Login
-        </Link>
+        {!user ? (
+          <Link to="/login" className="navLink loginLink" aria-label="Login" onClick={() => setMenuOpen(false)}>
+            Login
+          </Link>
+        ) : (
+          <button className="loginButton" onClick={handleLogout} aria-label="Logout">
+            Logout
+          </button>
+        )}
       </nav>
       <button
         className="menuToggle"

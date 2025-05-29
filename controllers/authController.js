@@ -1,4 +1,5 @@
 const db = require('../config/db');
+const jwt = require('jsonwebtoken');
 
 const authController = {
   login: async (req, res) => {
@@ -19,10 +20,17 @@ const authController = {
       }
 
       const user = rows[0];
+      const token = jwt.sign(
+        { id: user.id, nombre: user.nombre, rol_id: user.rol_id },
+        process.env.JWT_SECRET,
+        { expiresIn: '1h' }
+      );
+
       return res.json({
         id: user.id,
         nombre: user.nombre,
-        rol_id: user.rol_id
+        rol_id: user.rol_id,
+        token
       });
     } catch (error) {
       console.error('Error en login:', error);

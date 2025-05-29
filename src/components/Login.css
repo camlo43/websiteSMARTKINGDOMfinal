@@ -50,7 +50,8 @@
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   border: none;
   outline: none;
   flex: 1;
@@ -58,7 +59,25 @@ input[type="password"] {
   color: #003F91; /* Azul oscuro amigable */
   background: transparent;
   font-family: 'Montserrat', sans-serif;
-  padding-left: 36px; /* increased left padding to avoid icon overlap */
+  padding-left: 30px; /* added left padding to avoid icon overlap */
+  height: 30px; /* reduced height to make input thinner */
+}
+
+/* Password group to position toggle icon */
+.passwordGroup {
+  position: relative;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #003F91;
+  font-size: 1.2rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .loginButton {
@@ -76,6 +95,7 @@ input[type="password"] {
 .loginButton:hover,
 .loginButton:focus {
   background-color: #4DA6FF; /* Azul cielo vibrante */
+  box-shadow: 0 6px 18px rgba(0, 63, 145, 1);
   outline: none;
 }
 

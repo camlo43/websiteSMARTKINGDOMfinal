@@ -13,6 +13,10 @@ import EnrollmentForm from './components/EnrollmentForm';
 import './components/EnrollmentForm.css';
 import Schedule from './components/Schedule';
 import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import DocentePanel from './components/DocentePanel';
+import PadrePanel from './components/PadrePanel';
+import AdminPanel from './components/AdminPanel';
 
 function Home() {
   return (
@@ -38,6 +42,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/docente"
+            element={<PrivateRoute component={DocentePanel} allowedRoles={[2]} />}
+          />
+          <Route
+            path="/padre"
+            element={<PrivateRoute component={PadrePanel} allowedRoles={[3]} />}
+          />
+          <Route
+            path="/admin"
+            element={<PrivateRoute component={AdminPanel} allowedRoles={[1]} />}
+          />
         </Routes>
         <Footer />
       </div>

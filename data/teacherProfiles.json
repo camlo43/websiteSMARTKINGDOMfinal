@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Karime",
+    "photo": "/profesora_karime.jpg",
+    "description": "Hola, soy la profesora Karime. Estoy encantada de acompañarte en este curso.",
+    "course": "Step"
+  },
+  {
+    "id": 2,
+    "name": "Shirly",
+    "photo": "/profesora_shirly.jpg",
+    "description": "Hola, soy la profesora Shirly. Enseño Kinder y Transición.",
+    "course": "Kinder y Transición"
+  },
+  {
+    "id": 3,
+    "name": "Yolmary",
+    "photo": "/profesora_yolmary.jpg",
+    "description": "Hola, soy la profesora Yolmary. Enseño Prekinder.",
+    "course": "Prekinder"
+  },
+  {
+    "id": 4,
+    "name": "Angelis",
+    "photo": "/profesora_angelis.jpg",
+    "description": "Hola, soy la profesora Angelis. Enseño Nursery.",
+    "course": "Nursery"
+  }
+]

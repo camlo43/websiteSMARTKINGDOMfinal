@@ -88,7 +88,30 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* Removed flower decorations */
+}
+
+/* Added styles for logout button to match login button */
+button.loginButton {
+  background-color: #003F91; /* Azul oscuro amigable */
+  color: #FFFFFF; /* Blanco nieve */
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 63, 145, 0.8);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.loginButton:hover,
+button.loginButton:focus {
+  background-color: #4DA6FF; /* Azul cielo vibrante */
+  box-shadow: 0 6px 18px rgba(0, 63, 145, 1);
+  outline: none;
 }
 
 /* Responsive styles for mobile */
