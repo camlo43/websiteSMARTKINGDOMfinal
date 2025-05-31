@@ -1,35 +1,20 @@
-const Student = require('../models/Student');
+exports.getMisEstudiantes = (req, res) => {
+  const docenteId = req.user.id; // del token
 
-const studentController = {
-  getAllStudents: async (req, res) => {
-    try {
-      const students = await Student.findAll();
-      res.json(students);
-    } catch (error) {
-      res.status(500).json({ message: 'Server error', error });
-    }
-  },
+  const query = `
+    SELECT n.id, n.nombre, n.fecha_nacimiento, n.salon_id, u.nombre AS acudiente
+    FROM niños n
+    JOIN usuarios u ON n.usuario_id = u.id
+    WHERE n.docente_id = ?
+  `;
 
-  getStudentById: async (req, res) => {
-    try {
-      const student = await Student.findById(req.params.id);
-      if (!student) {
-        return res.status(404).json({ message: 'Student not found' });
-      }
-      res.json(student);
-    } catch (error) {
-      res.status(500).json({ message: 'Server error', error });
+  db.query(query, [docenteId], (err, results) => {
+    if (err) {
+      console.error('Error al obtener los estudiantes:', err);
+      return res.status(500).json({ message: 'Error interno del servidor' });
     }
-  },
 
-  getStudentsWithClassroom: async (req, res) => {
-    try {
-      const studentsWithClassroom = await Student.findAllWithClassroom();
-      res.json(studentsWithClassroom);
-    } catch (error) {
-      res.status(500).json({ message: 'Server error', error });
-    }
-  }
+    return res.json(results);
+  });
 };
 
-module.exports = studentController;

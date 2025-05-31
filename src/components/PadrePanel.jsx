@@ -14,7 +14,7 @@ const PadrePanel = () => {
     const fetchNotas = async () => {
       try {
         const token = user?.token;
-        const response = await fetch('http://localhost:3001/api/padre/notas/' + estudianteId, {
+        const response = await fetch('http://localhost:3001/api/gradeRoutes/student/' + estudianteId, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
